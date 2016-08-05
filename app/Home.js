@@ -3,16 +3,15 @@
  * Sample React Native App
  * https://github.com/facebook/react-native
  */
-
-import React, {
+import React, { Component } from 'react';
+import {
   AppRegistry,
-  Component,
   StyleSheet,
   Text,
   View
 } from 'react-native';
 
-class Mine extends Component {
+class Home extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -32,7 +31,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-
+Home
 });
 
-module.exports = Mine;
+module.exports = Home;

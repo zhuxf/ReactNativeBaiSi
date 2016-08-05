@@ -4,20 +4,20 @@
  * https://github.com/facebook/react-native
  */
 
-import React, {
-  AppRegistry,
-  Component,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+ import React, { Component } from 'react';
+ import {
+   AppRegistry,
+   StyleSheet,
+   Text,
+   View
+ } from 'react-native';
 
-class Main extends Component {
+class Mine extends Component {
   render() {
     return (
       <View style={styles.container}>
         <Text>
-          Welcome to React Native!
+          我的
         </Text>
 
       </View>
@@ -35,4 +35,4 @@ const styles = StyleSheet.create({
 
 });
 
-module.exports = Main;
+module.exports = Mine;
