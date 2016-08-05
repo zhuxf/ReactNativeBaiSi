@@ -1,0 +1,26 @@
+{
+    "tag_list": [{
+        "theme_id": "5535",
+        "theme_name": "好基友一生一起走"
+        }, {
+        "theme_id": "182",
+        "theme_name": "百思每日签到"
+    }],
+    "square_list": [{
+        "id": "28",
+        "name": "审贴",
+        "icon": "http:%/%/img.spriteapp.cn%/ugc%/2015%/05%/20%/150532_5078.png",
+        "url": "mod:%/%/BDJ_To_Check",
+        "android": "",
+        "iphone": "",
+        "ipad": ""
+    }, {
+        "id": "71",
+        "name": "寂寞约会",
+        "icon": "http:%/%/img.spriteapp.cn%/ugc%/2015%/06%/11%/174856_5547.png",
+        "url": "http:%/%/5963.yoyuan.com.cn%/?from=5963",
+        "android": "4.0|",
+        "iphone": "3.0|",
+        "ipad": ""
+    }]
+}
