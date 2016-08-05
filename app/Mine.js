@@ -10,10 +10,17 @@
    StyleSheet,
    Text,
    View,
-   ListView
+   ListView,
+   Image,
+   PixelRatio
  } from 'react-native';
 
 import InfoData from '../LocalData/MineInfos.json';
+import Dimensions from 'Dimensions';
+var {width , height} = Dimensions.get("window");
+var clos = 5 ;
+var cellWH = 75  ;
+var marginL = (width - cellWH * clos) / (clos + 1) - 6;
 
 class Mine extends Component {
   constructor(props) {
@@ -21,7 +28,7 @@ class Mine extends Component {
 
     var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
-      dataSource: ds.cloneWithRows(InfoData.square_list)
+      dataSource: new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
     };
 
     this.renderRow = this.renderRow.bind(this);
@@ -34,11 +41,10 @@ class Mine extends Component {
 
   renderRow(rowData) {
     return (
-      <Text
-
-      >
-        {rowData.name}
-      </Text>
+      <View style={{justifyContent: 'center', alignItems: 'center', width: cellWH , height: cellWH, borderLeftWidth: 1/PixelRatio.get(), borderLeftColor: '#dddddd', borderTopWidth: 1/PixelRatio.get(), borderTopColor: '#dddddd'}}>
+          <Image source={{uri: rowData.icon}} style={{width: 38 , height: 38, marginBottom: 5}}/>
+          <Text>{rowData.name}</Text>
+      </View>
     );
   }
 
@@ -50,6 +56,7 @@ class Mine extends Component {
         <ListView
           dataSource={this.state.dataSource}
           renderRow={this.renderRow}
+          contentContainerStyle={styles.contentViewStyle}
         />
 
       </View>
@@ -75,11 +82,18 @@ class Mine extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    backgroundColor: 'white',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'white',
     marginTop: 25
+  },
+
+  contentViewStyle: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    width: width,
+    marginTop: 10,
+    marginLeft: marginL
   },
 
 });
